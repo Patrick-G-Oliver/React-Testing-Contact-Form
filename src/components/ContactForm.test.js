@@ -7,8 +7,8 @@ test("renders ContactForm correctly", () => {
 });
 
 test ("First Name input requires a minimum of two characters", () => {
-    const { getByName } = render(<ContactForm />);
-    const input = getByName(/firstname/i);
+    const { getByText } = render(<ContactForm />);
+    const input = getByText(/firstname/i);
     fireEvent.change(input, { target: {value: "Ed"} });
     expect(input.value).toBe("Ed");
 });
