@@ -17,8 +17,9 @@ const ContactForm = () => {
           <label htmlFor="firstName">First Name*</label>
           <input
             name="firstName"
-            placeholder="Edd"
-            ref={register({ required: true, maxLength: 3 })}
+            placeholder="Ed"
+            ref={register({ required: true, minLength: 2 })}
+            data-testid="1stName"
           />
           {errors.firstName && (
             <p>Looks like there was an error: {errors.firstName.type}</p>
